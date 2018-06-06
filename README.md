@@ -1,0 +1,1 @@
+# golang-zabbix-alert-to-dingding-for-group
