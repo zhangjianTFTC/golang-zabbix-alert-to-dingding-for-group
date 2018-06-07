@@ -47,7 +47,7 @@ type DingMsg struct {
 }
 
 /*
-zabbix需要传送的参数
+zabbix需要传送的参数，命令行参数
  */
 type MsgInfo struct {
 	//消息属性和内容
@@ -233,7 +233,7 @@ func sendMsg(msg string) (status bool) { //发送OA消息，,返回成功或失�
 func init() {
 
 	flag.StringVar(&msgInfo.Webhook, "webhook", "", "消息的接收人，可以在钉钉后台查看，可空。")
-	flag.StringVar(&msgInfo.Msg, "msg", `{ "from": "甜菜网", "time": "2016.07.28 17:00:05", "level": "Warning", "name": "这是一个甜菜网（qiansw.com）提供的ZABBIX钉钉报警插件。", "key": "icmpping", "value": "30ms", "now": "56ms", "id": "1637", "ip": "8.8.8.8", "color":"FF4A934A", "age":"3m", "recoveryTime":"2016.07.28 17:03:05", "status":"OK" }`, "Json格式的文本消息内容，不可空。")
+	flag.StringVar(&msgInfo.Msg, "msg", `{ "from": "甜菜网", "time": "2016.07.28 17:00:05", "level": "Warning", "name": "这是一个甜菜网（www.itiancai.com）提供的ZABBIX钉钉报警插件。", "key": "icmpping", "value": "30ms", "now": "56ms", "id": "1637", "ip": "8.8.8.8", "color":"FF4A934A", "age":"3m", "recoveryTime":"2016.07.28 17:03:05", "status":"OK" }`, "Json格式的文本消息内容，不可空。")
 	flag.StringVar(&msgInfo.Url, "url", "http://www.itiancai.com", "消息内容点击后跳转到的URL，可空。")
 	flag.StringVar(&msgInfo.Style, "style", "json", "Msg的格式，可选json和xml，推荐使用xml（支持消息中含双引号），可空。")
 	flag.StringVar(&logPath, "log", "", "指定存放 log 的目录，不指定则不记录 log。")
